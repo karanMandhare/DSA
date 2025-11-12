@@ -23,7 +23,7 @@ public:
         }
         
         //here in 2nd curve check if 2nd pos is greater than frist half  as we know that pos of 2nd curve should be less than 1st graph 
-    if(pos>= n and nums[pos]>nums[0])
+    if(nums[pos]>nums[0])
     return false;
   
     //for checking the 2nd curve
