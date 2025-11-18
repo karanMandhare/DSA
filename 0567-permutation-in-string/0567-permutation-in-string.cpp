@@ -15,26 +15,22 @@ public:
 
         int count1[26] = {0}, count2[26] = {0};
 
-        // Build frequency map for s1
         for (char ch : s1) {
             count1[ch - 'a']++;
         }
 
-        // Initialize the first window in s2
+   
         for (int i = 0; i < len1; ++i) {
             count2[s2[i] - 'a']++;
         }
 
-        // Check first window
         if (areEqual(count1, count2)) return true;
 
-        // Slide the window across s2
         for (int i = len1; i < len2; ++i) {
-            count2[s2[i] - 'a']++;                     // Add new character
-            count2[s2[i - len1] - 'a']--;              // Remove old character
-            if (areEqual(count1, count2)) return true; // Check updated window
+            count2[s2[i] - 'a']++;                     
+            count2[s2[i - len1] - 'a']--;                      if (areEqual(count1, count2)) return true; 
         }
 
-        return false; // No permutation found
+        return false; 
     }
 }; 
